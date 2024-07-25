@@ -4,11 +4,13 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { SignedIn } from '@clerk/nextjs'
+import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { navLinks } from '@/constants'
 import { Sign } from 'crypto'
 import { PathnameContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime'
 import { clerkClient } from '@clerk/nextjs/server'
+import { Button } from '../ui/button'
+import { UserButton } from '@clerk/nextjs'
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -47,9 +49,18 @@ const Sidebar = () => {
                 )
               })}
 
+              <li className="flex-center cursor-pointer gap-2 p-4">
+                <UserButton afterSignOutUrl='/' showName />
+              </li>
+
             </ul>
           </SignedIn>
 
+          <SignedOut>
+            <Button asChild className="button bg-purple-gradient bg-cover">
+              <Link href="/sign-in">Login</Link>
+            </Button>
+          </SignedOut>
 
         </nav>
 
