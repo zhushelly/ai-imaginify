@@ -1,11 +1,7 @@
 "use client"
 
 import React from 'react'
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-  } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Link from 'next/link'
 import Image from 'next/image'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
@@ -30,16 +26,14 @@ const MobileNav = () => {
             <SignedIn>
                 <UserButton afterSignOutUrl="/" />
                 <Sheet>
-              
-                        <SheetTrigger>
-                            <Image 
-                                src="/assets/icons/menu.svg"
-                                alt="menu"
-                                width={32}
-                                height={32}
-                                className="cursor-pointer"/>
-                        </SheetTrigger>
-             
+                    <SheetTrigger>
+                        <Image 
+                            src="/assets/icons/menu.svg"
+                            alt="menu"
+                            width={32}
+                            height={32}
+                            className="cursor-pointer"/>
+                    </SheetTrigger>             
                     <SheetContent className="sheet-content sm:w-64">
                         <>
                             <Image
@@ -63,8 +57,6 @@ const MobileNav = () => {
                                             height={24}
                                         />
                                         {link.label}
-
-                                        
                                         </Link>
 
                                     </li>
