@@ -9,7 +9,8 @@ import { handleError } from "../utils";
 // CREATE
 export async function createUser(user: CreateUserParams) {
   try {
-    await connectToDatabase();
+    const conn = await connectToDatabase();
+    console.log("MongoDB Connection status: ", conn);
 
     const newUser = await User.create(user);
 
