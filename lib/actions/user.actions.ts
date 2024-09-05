@@ -13,7 +13,7 @@ export async function createUser(user: CreateUserParams) {
     console.log("MongoDB Connection status: ", conn);
 
     const newUser = await User.create(user);
-
+        
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
     handleError(error);
