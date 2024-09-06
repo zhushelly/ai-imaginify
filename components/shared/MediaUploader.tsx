@@ -1,5 +1,4 @@
 "use client";
-
 import { useToast } from "@/components/hooks/use-toast"
 import { dataUrl, getImageSize } from "@/lib/utils"
 import { CldUploadWidget, CldImage } from "next-cloudinary"
