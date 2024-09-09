@@ -58,7 +58,7 @@ export async function updateImage({ image, userId, path }: UpdateImageParams) {
 
         revalidatePath(path);
 
-        return JSON.parse(JSON.stringify(updateImage));
+        return JSON.parse(JSON.stringify(updatedImage));
     }
     catch (error) {
         handleError(error);
