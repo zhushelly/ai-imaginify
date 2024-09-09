@@ -4,15 +4,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+import { Form } from "@/components/ui/form"
 import {
     Select,
     SelectContent,
@@ -31,7 +23,7 @@ import TransformedImage from "./TransformedImage"
 import { updateCredits } from "@/lib/actions/user.actions"
 import { getCldImageUrl } from "next-cloudinary"
 import { addImage, updateImage } from "@/lib/actions/image.actions"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 export const formSchema = z.object({
   title: z.string(),
