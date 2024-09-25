@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 export interface IImage extends Document {
+    _id: string; // added this property for Collection.tsx
     title: string;
     transformationType: string;
     publicId: string;
